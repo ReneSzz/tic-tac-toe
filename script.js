@@ -10,6 +10,7 @@
 const gameBoardCreator = () => {
 const gameboardArray = ["","","","","","","","",""]
 let marker = "";
+
 const gameBoxs = document.getElementsByClassName("gameBox");
 let createClickEffect = () =>
 {
