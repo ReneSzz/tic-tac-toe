@@ -41,7 +41,9 @@ let createClickEffect = () =>
         if (checkWin(currentClass)){
             console.log('winner');
         }
-
+        else if (isDraw()){
+            console.log("draw!")
+        }
 
         swapTurns();
         }
@@ -68,7 +70,11 @@ function checkWin(currentClass){
     })
     
 }
-
+function isDraw() {
+    return [...gameBoxs].every(cell => { 
+    return cell.classList.contains(X_CLASS) || cell.classList.contains(circle_Class)
+    })
+}
 
 return {createClickEffect};
 }
