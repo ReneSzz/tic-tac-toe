@@ -1,7 +1,7 @@
 
-
-
-
+let backgroundCover = document.getElementById("bgCover");
+let gameOverText = document.getElementById("gameOverText");
+let resetButton = document.getElementById("resetButton")
 
 
 const gameBoardCreator = () => {
@@ -40,9 +40,13 @@ let createClickEffect = () =>
         gameBoxs[index].innerHTML = currentClass;
         if (checkWin(currentClass)){
             console.log('winner');
+            displayCover(currentClass);
+            resetGame();
         }
         else if (isDraw()){
             console.log("draw!")
+            displayCover(currentClass);
+            resetGame();
         }
 
         swapTurns();
@@ -75,6 +79,25 @@ function isDraw() {
     return cell.classList.contains(X_CLASS) || cell.classList.contains(circle_Class)
     })
 }
+
+
+
+function displayCover(currentClass){
+        backgroundCover.style.display = "flex";
+        gameOverText.innerText = `The winner is ${currentClass}`;
+    }
+
+function resetGame(){
+   resetButton.addEventListener('click', function(e) {
+    backgroundCover.style.display = "none";
+    [...gameBoxs].forEach(element => {
+        element.classList.remove(X_CLASS);
+        element.classList.remove(circle_Class);
+        element.innerText = "";
+    });
+    });
+}
+
 
 return {createClickEffect};
 }
