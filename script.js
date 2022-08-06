@@ -94,6 +94,7 @@ function resetGame(){
         element.classList.remove(X_CLASS);
         element.classList.remove(circle_Class);
         element.innerText = "";
+        circleTurn = false;
     });
     });
 }
