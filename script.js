@@ -39,13 +39,14 @@ let createClickEffect = () =>
         console.log(currentClass);
         gameBoxs[index].innerHTML = currentClass;
         if (checkWin(currentClass)){
-            console.log('winner');
+           
             displayCover(currentClass);
             resetGame();
         }
         else if (isDraw()){
-            console.log("draw!")
-            displayCover(currentClass);
+            
+            backgroundCover.style.display = "flex";
+            gameOverText.innerText = `It's a draw!`;
             resetGame();
         }
 
