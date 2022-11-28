@@ -29,14 +29,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     width: 495px;
-    height: 480px;
+    height: 480px; 
 }
 
 .gameBoard > div {
     border: solid 2px black;
     width: 160px;
     height: 160px;
-    font-size: 11rem;
+    font-size: 8rem;
     text-align: center;
     
 }
